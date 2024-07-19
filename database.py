@@ -141,17 +141,5 @@ class Database:
             if cnx:
                 cnx.close()
                 
-
-'''if __name__=='__main__':
-    database = Database()
-    #content = ["esse é o texto 3", "esse é o subtexto 3", "chave 3", 0]
-    #database.insert_content(content)
-    cont = database.get_random_content()
-    print(cont)
-    if cont:
-        database.update_processed_content(cont[0][0])
-    else:
-        print("todos já processados.")'''
-    
             
             
