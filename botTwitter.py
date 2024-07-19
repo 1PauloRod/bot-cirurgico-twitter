@@ -79,33 +79,3 @@ class BotTwitter:
         os.remove("createdImage//" + image_filename + ".jpg")
         
     
-    """
-        criar um site para pegar texto, subtexto, palavra chave para
-        salvar no banco de dados
-    """
-    
-
-if __name__=='__main__':
-    database = Database()
-    content = ["esse é o texto 78", "esse é o subtexto 78", "autor 78", 0]
-    database.insert_content(content)
-    
-    '''botT = botTwitter()
-    #botT.process_content()'''
-    
-    #botT.post_content("baseImage/image.png")
-    
-    '''i = 0
-    while True:
-        botT.process_content()
-        i += 1
-        print("{} enviado".format(i))
-        sleep(3)'''
-    
-    #database.insert_content(content)
-    '''cont = database.get_random_content()
-    print(cont)
-    if cont:
-        database.update_processed_content(cont[0][0])
-    else:
-        print("todos já processados.")'''
