@@ -10,36 +10,36 @@ USER = 'PauloRod'
 PASSWORD = 'fundao123'
 DATABASE = 'PauloRod$fundaocirurgicodb'
 
-VERIFY_DATABASE_EXIST = "SHOW DATABASES LIKE 'fundaocirurgicodb'"
-CREATE_DATABASE = "CREATE DATABASE fundaocirurgicodb"
+VERIFY_DATABASE_EXIST = "SHOW DATABASES LIKE 'PauloRod$fundaocirurgicodb'"
+CREATE_DATABASE = "CREATE DATABASE PauloRod$fundaocirurgicodb"
 
-VERIFY_TABLE_EXIST = "SHOW TABLES LIKE 'appcirurgico_fundaocirurgicotb'"
+VERIFY_TABLE_EXIST = "SHOW TABLES LIKE 'appCirurgico_fundaocirurgicotb'"
 CREATE_TABLE = """
-            CREATE TABLE appcirurgico_fundaocirurgicotb(
-                id          INT AUTO_INCREMENT PRIMARY KEY, 
-                text        VARCHAR(255) NOT NULL, 
-                subtext     VARCHAR(255) NOT NULL, 
-                autor       VARCHAR(255) NOT NULL, 
+            CREATE TABLE appCirurgico_fundaocirurgicotb(
+                id          INT AUTO_INCREMENT PRIMARY KEY,
+                text        VARCHAR(255) NOT NULL,
+                subtext     VARCHAR(255) NOT NULL,
+                autor       VARCHAR(255) NOT NULL,
                 processed   bit          DEFAULT  0,
-                date        datetime 
+                date        datetime
             )
 """
 
 INSERT_CONTENT = """
-            insert into fundaocirurgicodb.appcirurgico_fundaocirurgicotb(text, subtext, autor, processed)
+            insert into PauloRod$fundaocirurgicodb.appCirurgico_fundaocirurgicotb(text, subtext, autor, processed)
             VALUES ('%s', '%s', '%s', %d);
 """
 
 GET_RANDOM_NOT_PROCESSED_CONTENT = """
-            SELECT * 
-            FROM fundaocirurgicodb.appcirurgico_fundaocirurgicotb 
+            SELECT *
+            FROM PauloRod$fundaocirurgicodb.appCirurgico_fundaocirurgicotb
             WHERE processed = 0
             ORDER BY RAND() LIMIT 1
 
 """
 
 UPDATE_CONTENT = """
-            UPDATE fundaocirurgicodb.appcirurgico_fundaocirurgicotb
+            UPDATE PauloRod$fundaocirurgicodb.appCirurgico_fundaocirurgicotb
             SET processed = %d
             WHERE id = %d
 """
